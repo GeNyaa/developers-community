@@ -8,11 +8,11 @@ level3: Javascript Chat SDK
 order: 3
 permalink: consumer-experience-javascript-chat-surveys.html
 
+indicator: chat
 ---
 
 All surveys follow the same structure and behavior patterns. To avoid duplication for the different survey types, here is a summary of the survey object.
 
-You can also use our JavaScript Survey Logic Helper class to manage the survey complexity and result structure.
 
 **The Survey Object**
 

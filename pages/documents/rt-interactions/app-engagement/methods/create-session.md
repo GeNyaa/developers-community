@@ -8,6 +8,7 @@ level4: Methods
 order: 10
 permalink: rt-interactions-create-session.html
 
+indicator: both
 ---
 
 Use this method to start a new session and to get an engagement according to the SDEs provided.
@@ -36,7 +37,7 @@ Use this method to start a new session and to get an engagement according to the
 
 | Parameter | Description | Type | Notes |
 | :--- | :--- | :--- | :--- |
-| accountId | LP site ID | string | ^[a-zA-Z0-9_]{1,20}$ | 
+| accountId | LP site ID | string | ^[a-zA-Z0-9_]{1,20}$ |
 | visitorId | Visitor ID | string | Optional (Required on second request) |
 
 **Query parameters**
@@ -88,13 +89,13 @@ https://domainToLiveperson/api/account/{accountId}/app/engagement/visitors/{visi
 
 **Response Codes**
 
-| Code | Response | 
+| Code | Response |
 | :--- | :--- |
 | 200 | OK |
 | 400 | Validation error |
 | 401 | Unauthorized |
 | 404 | Data not found |
-| 500 | Internal server error |
+| 500 | Internal server error - If using a test account (or any account that has extremely low volume), when making the getEngagement call, you will get a 500 error with the following error: "{"time":1499263964605,"message":"Loading account: {{accountId}}, vid: {{vid}}","internalCode":20}" This is due to the way our accounts are loaded on the server side. It takes a short period of time for an account with low volume to load in and get a 200 response with the correct engagement. |
 | 503 | The server is temporarily unavailable |
 
 **Retry Policy Recommendation**
@@ -102,7 +103,7 @@ https://domainToLiveperson/api/account/{accountId}/app/engagement/visitors/{visi
 | Error code | Meaning | Recommendation |
 | :--- | :--- | :--- |
 | 4xx | Client side error | Do not retry, fix problem in code |
-| 5xx | Error on server side | Retry 3 times with 5, 10, 15 second pause between retries |
+| 5xx | Loading Account; Error on server side | Retry 3 times with 5, 10, 15 second pause between retries, setting the 'visitorId' path parameter with the value of the 'vid' if it was provided in the initial response |
 
 **Entity Structure**
 
@@ -141,7 +142,7 @@ Status code: 200 OK (engagement is available)
         "engagementRevision": 44,
         "validForSeconds": 900,
         "skillId": 23,
-        "skillName":"TestSkill" 
+        "skillName":"TestSkill"
        }
     }
 

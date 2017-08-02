@@ -9,6 +9,7 @@ level4: Methods
 order: 40
 permalink: agent-retrieve-available-agents.html
 
+indicator: chat
 ---
 
 This resource returns all agents which are not disabled in the system for the account provided in the request. The agents returned include both online and offline agents, but not agents that were disabled (for any reason).  For each agent, this resource returns details such as ID, username, nickname, and more. The resource also returns, for each agent, the agent's skills and the agent's availability to accept chats (the number of chats this agent is configured to take and the number of chats in which this agent is already involved).
@@ -42,6 +43,7 @@ The body media type must have one of the following formats:
 |------------|-------------------------------------------------------------------------|--------------|-------------------------------------------------------|
 | skill      | Skill name. Filter the returned agents list by the requested skill.     | alphanumeric | Example: {available-agents}?skill=Default&v=1.        |
 | chatState  | State name. Filter the returned agents list by the agent's chat state.  | string       | Valid values: "Online", "Offline", "Occupied", "Away" |
+| chatReasonId           | chat state reason id (represents a reason as configured in the account) voice.                                                                                        | alphanumeric           | Optional - reasonID is currently not retrievable, contact your Account Team if necessary |
 | voiceState | State name. Filter the returned agents list by the agent's voice state. | string       | Valid values: "Online", "Offline", "Occupied", "Away" |
 
 ### Response
@@ -55,7 +57,6 @@ The body media type must have one of the following formats:
 | agent                | Contains the agent's details (as attributes its ID, chatState, voiceState, maxChats) and more details as child elements. | element           |                                                                                                                                                                                                                   |
 | id                   | The ID associated with this agent.                                                                                       | numeric           |                                                                                                                                                                                                                   |
 | chatState            | The state of the agent for chat.                                                                                         | numeric           | 1 - Offline - Agent is logged off. 2 - Online - Agent can accept chat requests. 3 - Occupied - Agent can receive chats that were transferred to him/her. 4 - Away - Agent cannot accept chat requests.            |
-| chatReasonId           | chat state reason id (represents a reason as configured in the account) voice.                                                                                        | alphanumeric           |  |
 | voiceState           | The state of the agent for voice.                                                                                        | numeric           | 1 - Offline - Agent is logged off. 2 - Online - Agent can accept voice requests. 3 - Occupied - Agent can receive voice requests that were transferred to him/her. 4 - Away - Agent cannot accept voice requests. |
 | maxChats             | The maximum number of chats this agent can take, according to his/her current availability.                              | numeric           |                                                                                                                                                                                                                   |
 | userName             | The username of this agent.                                                                                              | alphanumeric      |                                                                                                                                                                                                                   |

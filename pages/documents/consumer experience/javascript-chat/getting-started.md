@@ -5,17 +5,18 @@ level1: Documents
 level2: Consumer Experience
 level3: Javascript Chat SDK
 
-level-order: 4
+level-order: 6
 order: 1
 permalink: consumer-experience-javascript-chat-getting-started.html
 root-link: true
+indicator: chat
 ---
 
 ### Introduction
 
 LiveEngage offers a chat window for desktop and mobile web out of the box, and brands can customize the window behavior and look and feel.
 
-For complete control over the chat window look, behavior and implementation source, utilize the Javascript Chat Window SDK to create your window from scratch. 
+For complete control over the chat window look, behavior and implementation source, utilize the Javascript Chat Window SDK to create your window from scratch.
 
 The JavaScript Chat SDK is a wrapper for the Server Chat API. For this reason, before starting to work with the JavaScript Chat SDK, we recommend you refer to the [Server Chat API documentation](consumer-experience-server-chat-getting-started.html){:target="_blank"} and follow the guidelines.
 
@@ -35,7 +36,7 @@ A few things you'll need to get started with this API:
 
 	* appKey=721c180b09eb463d9f3191c41762bb68
 
-4. [Here are the API terms of use](https://www.liveperson.com/policies/terms-of-use){:target="_blank"}.
+4. [Here are the API terms of use](https://www.liveperson.com/policies/apitou){:target="_blank"}.
 
 ### Use Cases
 

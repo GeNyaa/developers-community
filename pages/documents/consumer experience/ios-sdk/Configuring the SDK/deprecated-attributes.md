@@ -6,9 +6,10 @@ level2: Consumer Experience
 level3: In-App Messaging SDK for iOS
 level4: Customization and Branding
 
-order: 225
+order: 226
 permalink: consumer-experience-ios-sdk-deprecated-attributes.html
 
+indicator: messaging
 ---
 
 Listed below are attributes that have been deprecated. These keys should no longer be used as LPConfig files, but rather as Localized strings keys. The names of these keys in the Localization files remain the same as in the LPConfig files.

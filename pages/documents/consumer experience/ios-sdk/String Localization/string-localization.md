@@ -6,9 +6,10 @@ level2: Consumer Experience
 level3: In-App Messaging SDK for iOS
 level4: String Localization
 
-order: 226
+order: 227
 permalink: consumer-experience-ios-sdk-stringlocalization.html
 
+indicator: messaging
 ---
 
 TThe SDK contains language folders for each language supported. For a list of supported languages, see [LiveEngage System Requirements and Language Support](https://ce-sr.s3.amazonaws.com/CA/Admin/Sys%20req/System%20requirements.pdf){:target="_blank"}. Each folder contains LPLocalizable.strings file, where all strings are located for a specific language.
@@ -34,15 +35,15 @@ Example: Overriding the SDK string of ‘send’ in English:
 * Open project settings
 * Info tab
 * Under Localizations, press ‘+’ sign
-* Choose the new language you would like to support. 
+* Choose the new language you would like to support.
 
-  **Attaching a Strings file to existing supported languages**: 
+  **Attaching a Strings file to existing supported languages**:
 * Choose the desired strings file
 * Open the file inspector
-* Under localizations, choose the relevant languages. 
+* Under localizations, choose the relevant languages.
 
 Your ‘send’ string implementation will override the localization in English in the SDK`
- 
+
 
 In order to print all localized keys with a default English value in the SDK, call the following:
 
@@ -53,7 +54,7 @@ In order to print all localized keys with a default English value in the SDK, ca
 In order to get or print all localized supported languages in the SDK, call the following:
 
 `LPMessagingSDK.instance.printSupportedLanguages()`
- 
+
 
 
 In order to get all supported languages by key-value (key is locale key and value is language description), call the following:

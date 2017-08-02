@@ -50,6 +50,17 @@ h4[id]{
   border: 1px solid #162036;
   width: 100%;
 }
+
+.designsheet td {
+  font-size: 1.2em;
+  line-height: 2.4em !important;
+}
+
+.designsheet img {
+    width: auto !important;
+    float: right;
+}
+
 .post-content table td:first-child {
   width:unset;
   max-width: 150px;
@@ -79,6 +90,42 @@ table > thead > tr > th {
     font-family: "Open Sans",Arial;
     font-size: 0.8em;
 }
+
+.designsheet table tr td {
+  font-size: 0.9em;
+  line-height: 2.4em !important;
+  text-align: center;
+  font-weight: bold;
+}
+
+.designsheet table tr th {
+  background-color: #162036;
+  font-family: "Open Sans";
+  font-size: 0.8888em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.designsheet img {
+    width: auto !important;
+    float: right;
+}
+
+.designsheetnumber {
+  font-size: 2.5em;
+  margin-bottom: 7%;
+  padding-top: 1.5%;
+  margin-left: 40%;
+  border: 3px solid darkorange;
+  height: 50px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 50px;
+  background-color: orange;
+  color: #fff;
+}
+
 
 code {
   background-color: #f0f0f0;
@@ -268,13 +315,79 @@ div.sidebarTitle-holder {
     font-family:  "Roboto Slab", "Open Sans", Helvetica, sans-serif;
 }
 
+/*CSS for general styling of Chat/Messaging Indicator*/
+.indicator{
+  color: #FFFFFF;
+  background-color: #162036;
+  display: inline-block;
+  border: 1px #FFFFFF;
+  border-radius: 2px;
+  font-size: 1em;
+  padding: 2px 4px;
+  margin-bottom: 10px;
+  position: relative;
+  font-family: "Open Sans", "Roboto Slab", Arial, Helvetica, sans-serif;
+  cursor: default;
+}
+
+/*CSS for tooltip of Indicator*/
+
+.indicator .indicatortooltip{
+  visibility: hidden;
+  width: 120px;
+  background-color: #162036;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  left: -349%;  /* positioning the tooltip on the "C"*/
+  margin-top: 9px;
+
+}
+
+/*CSS for tooltip arrow*/
+.indicator .indicatortooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #162036 transparent;
+}
+
+.indicator:hover .indicatortooltip{
+  visibility: visible;
+}
+
+/*CSS for specific styling of Chat Indicator*/
+.chat{
+  background-color: #162036;
+}
+
+.messaging{
+  background-color: #5879DA !important;
+}
+
+.messaging > .indicatortooltip{
+  background-color: #5879DA !important;
+  left: -285% !important;
+}
+
+.messaging > .indicatortooltip::after{
+  border-color: transparent transparent #5879DA transparent !important;
+}
+
 .breadcrumbs {
   background-color: white;
   border-bottom: 1px solid lightgray;
   border-radius: 0;
   margin-bottom: 0;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 9px;
   min-height: 47px;
   padding-bottom: 5px;
   padding-left: 0;
